@@ -33,7 +33,7 @@ we are defining the datatype of which the address will be stored in the __ptr__ 
 only forward sequential access is possible in singly linked list
 
 
-![screeshot](https://github.com/UjjwalSharma01/DS-in-C/blob/922e4fc283f995062c79fb91bf42bc8aed3ff7e4/Linked%20List/Images/Screenshot%20(1937).png)
+![screenshot](https://github.com/UjjwalSharma01/DS-in-C/blob/922e4fc283f995062c79fb91bf42bc8aed3ff7e4/Linked%20List/Images/Screenshot%20(1937).png)
 
 SYNTAX
 ```c
@@ -57,7 +57,7 @@ struct node* previous;
 struct node* next;
 };
 ```
-screenshot
+![screenshor"](https://github.com/UjjwalSharma01/DS-in-C/blob/922e4fc283f995062c79fb91bf42bc8aed3ff7e4/Linked%20List/Images/Screenshot%20(1937).png)
 
 ### circular linked list
 
@@ -69,13 +69,13 @@ the last node will have the address of first node instead of __NULL__ address at
 
 - it is having propery of both circular and doubly linked list __i.e__ when the last node is pointing to the fist node of the linked list and you have both forward and backward sequential access
 
-screenshot
+
 
 ## Array VS Linked List
 
 ### Cost of Accessing data
 
-screenshot
+![url](https://github.com/UjjwalSharma01/DS-in-C/blob/410eec8cbc0d832b0aa3e023eb26036a03a8fafa/Linked%20List/Images/Screenshot%20(1941).png)
 
 
 Random access is possible in arrays because values are stored in sequential manner 
@@ -101,12 +101,15 @@ hence -> **Memory Requirement is less in array then the linked list because for 
 **Memory utilisation is better in linked list than in array** because for array we have to allot the memory slot of the maximum element , ab chahe hame sirf 1 element dalna ho for the time being pr agr hame max __100__ dalne h toh arr[10] hi krna pdega whereas linkedlist main esa nahi h
 
 ### Cost of Insertion
-screenshot
+![url](https://github.com/UjjwalSharma01/DS-in-C/blob/410eec8cbc0d832b0aa3e023eb26036a03a8fafa/Linked%20List/Images/Screenshot%20(1943).png)
+
 
 ## Implementation of Linked List
-for dynamic memory allocation we use malloc in c and new keyword in c++
+![url](https://github.com/UjjwalSharma01/DS-in-C/blob/410eec8cbc0d832b0aa3e023eb26036a03a8fafa/Linked%20List/Images/Screenshot%20(1944).png)
 
-__Simplest code for creation of linkedlist__
+for dynamic memory allocation we use __malloc__ in c and new keyword in c++
+
+__Simplest code for creation of Linked List__
 ```c
 int main() {
     struct node{
@@ -165,7 +168,7 @@ int main() {
 ### Linked List traversal
 ```c
 temp = head
-while(temp!=Null)
+while(temp!=Null){
 printf("%d", temp->data);
 temp = temp->next; //updating value to the next address
 }
@@ -236,10 +239,80 @@ int main() {
 3. After a given location
 
 ### At the Beginning
-```c
+![url](https://github.com/UjjwalSharma01/DS-in-C/blob/410eec8cbc0d832b0aa3e023eb26036a03a8fafa/Linked%20List/Images/Screenshot%20(1949).png)
 
+```c
+newnode->next = head;
+head = newnode;
 ```
-screenshot
+work more on this
+### At the end
+![url](https://github.com/UjjwalSharma01/DS-in-C/blob/410eec8cbc0d832b0aa3e023eb26036a03a8fafa/Linked%20List/Images/Screenshot%20(1951).png)
+
+Make sure that the last node is pointing to the NULL address  
+main logic
+```c
+temp = head;
+while(temp->next!=NULL){
+    temp = temp->next;
+}
+temp->next = newnode;
+newnode->next = NULL;
+```
+### After a given location
+![url](https://github.com/UjjwalSharma01/DS-in-C/blob/410eec8cbc0d832b0aa3e023eb26036a03a8fafa/Linked%20List/Images/Screenshot%20(1954).png)
+
+```c
+temp = head;
+while(temp->data!=loc){
+    temp = temp->next;
+}
+newnode->next = temp->next;
+temp->next = newnode;
+```
+## Deletion
+1. At the beginning
+2. At the end
+3. After a given location
+
+### At the beginning
+![url](https://github.com/UjjwalSharma01/DS-in-C/blob/410eec8cbc0d832b0aa3e023eb26036a03a8fafa/Linked%20List/Images/Screenshot%20(1955).png)
+
+__main logic__
+
+```c
+temp = head;
+head = head->next;
+free(temp);
+```
+### At the end
+![url](https://github.com/UjjwalSharma01/DS-in-C/blob/410eec8cbc0d832b0aa3e023eb26036a03a8fafa/Linked%20List/Images/Screenshot%20(1956).png)
+
+
+__main logic__
+```c
+temp = head;
+while(temp->next->next!=NULL){
+    temp = temp->next;
+}
+temp->next = NULL;
+free(temp->next);
+```
+### After a given location
+![url](<Images/Screenshot (1961).png>)
+__main logic__
+```c
+temp = head;
+while(temp->data!=loc){
+    temp = temp->next;
+}
+temp1 = temp->next;
+temp->next = temp1->next;
+free(temp1);
+```
+## Reverse a linked list
+
+
 
 
 
