@@ -32,6 +32,7 @@ we are defining the datatype of which the address will be stored in the __ptr__ 
 ### Singly Linked list 
 only forward sequential access is possible in singly linked list
 <screenshot ->
+![screeshot](https://github.com/UjjwalSharma01/DS-in-C/blob/922e4fc283f995062c79fb91bf42bc8aed3ff7e4/Linked%20List/Images/Screenshot%20(1937).png)
 SYNTAX
 ```c
 struct node {
