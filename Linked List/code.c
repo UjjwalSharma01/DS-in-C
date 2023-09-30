@@ -8,22 +8,28 @@ typedef struct node{
 
 int main(){
     node *head = NULL,*newnode,*temp;
-    int n==1;
-    if(n!=0){
+    int n=1;
+    while(n!=0){
     newnode = malloc(sizeof(node));
     printf("Enter the value of the node: ");
     scanf("%d",&newnode->value);
     newnode->next = NULL;
-    }
-    printf("You want to add one more value to the linkedlist ? ");
-    scanf("%d", &n);
-    
     if(head == NULL){
     head = newnode;
     }
     else{
-        temp = newnode;
+        temp = head;
         temp->next = newnode;
+    }
+    printf("You want to add one more value to the linkedlist ? ");
+    scanf("%d", &n);
+    
+    }
+    // Printing the linked list
+    temp = head;
+    while(temp!=NULL){
+        printf("%d ",temp->value);
+        temp = temp->next;
     }
     return 0;
 }
